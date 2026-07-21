@@ -1,0 +1,21 @@
+export const locales = ["en", "mn"] as const;
+
+export type Locale = (typeof locales)[number];
+
+export const defaultLocale: Locale = "en";
+
+export const localeNames: Record<Locale, string> = {
+  en: "English",
+  mn: "Монгол",
+};
+
+export const localeFlags: Record<Locale, string> = {
+  en: "🇬🇧",
+  mn: "🇲🇳",
+};
+
+export const LOCALE_COOKIE = "NEXT_LOCALE";
+
+export function isLocale(value: string | undefined): value is Locale {
+  return !!value && (locales as readonly string[]).includes(value);
+}

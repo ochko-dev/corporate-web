@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "about": "About",
+    "products": "Products",
+    "team": "Team",
+    "contact": "Contact",
+    "openMenu": "Open menu"
+  },
+  "hero": {
+    "headlinePrefix": "Where data becomes",
+    "headlineAccent": "intelligence.",
+    "scrollCue": "Scroll to next section"
+  },
+  "tagline": "Open Data Intelligence Network",
+  "about": {
+    "label": "About ODIN",
+    "intro": "Our company is a national private-sector enterprise operating in Mongolia in the development of technology, artificial intelligence, and data-driven solutions. We are committed to bringing advanced technologies into practical use to support decision-making in government and business organizations and to improve productivity across key sectors of the economy.",
+    "vision": [
+      {
+        "title": "Intelligent Data",
+        "description": "Transforming complex information into meaningful intelligence."
+      },
+      {
+        "title": "Advanced Technology",
+        "description": "Building practical AI systems for real-world challenges."
+      },
+      {
+        "title": "Connected Intelligence",
+        "description": "Connecting data, systems, and decisions."
+      },
+      {
+        "title": "Future Systems",
+        "description": "Creating technology for tomorrow's possibilities."
+      }
+    ]
+  },
+  "products": {
+    "eyebrow": "Our products",
+    "headline": "Artificial Intelligence",
+    "headlineAccent": "based projects",
+    "items": {
+      "intelligence": {
+        "name": "PORTAL system",
+        "title": "PORTAL system",
+        "description": "By connecting open data and big data to the system within the legal framework, then training and processing it with AI models, we deliver accessible, accurate, and reliable information to users."
+      },
+      "map": {
+        "name": "SURVEY system",
+        "title": "SURVEY system",
+        "description": "We are developing this system to eliminate superficial approaches to public surveys, bring every citizen's voice into political and business decision-making, and generate useful quantitative data that has not previously been available."
+      },
+      "analytics": {
+        "name": "ORGANIZATION’S virtual employee",
+        "title": "ORGANIZATION’S virtual employee",
+        "description": "Development of the virtual employee system is underway. A virtual employee is a software solution based on artificial intelligence (AI), trained on an organization's internal data, and capable of answering human questions, preparing reports and conclusions, issuing alerts, and performing automated response actions."
+      }
+    }
+  },
+  "team": {
+    "eyebrow": "Our team",
+    "positions": {
+      "ceo": "CEO",
+      "fullstackDeveloper": "FullStack developer",
+      "seniorBackendDeveloper": "Senior backend developer",
+      "seniorFrontendDeveloper": "senior frontend developer",
+      "projectManager": "Project Manager",
+      "dataScientist": "Data Scientist",
+      "frontendDeveloper": "Frontend developer",
+      "dataAnalyst": "Data analyst"
+    }
+  },
+  "footer": {
+    "closingLines": ["Intelligence is the foundation", "of every better decision."],
+    "findUsPrefix": "Find us",
+    "findUsAccent": "in Ulaanbaatar",
+    "addressLabel": "Address",
+    "getInTouchLabel": "Get in touch",
+    "copyright": "© {year} ODIN tech. All rights reserved."
+  },
+  "contact": {
+    "title": "Contact Page",
+    "description": "This is the contact page of the application."
+  }
+}

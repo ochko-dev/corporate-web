@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# debug artifacts
+.mobile-*.png
+.desktop-*.png
+.mobile-check*.mjs
