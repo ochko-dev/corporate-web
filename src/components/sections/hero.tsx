@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { DataSphere } from "@/components/shared/data-sphere";
+import { DataSphere } from "../shared/data-sphere";
 
 gsap.registerPlugin(ScrollTrigger);
 

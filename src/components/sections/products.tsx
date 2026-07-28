@@ -4,10 +4,10 @@ import { useLayoutEffect, useRef, useState, useSyncExternalStore } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
-import { ProductNav } from "@/components/products/product-nav";
-import { ProductContent } from "@/components/products/product-content";
-import { ProductVisual } from "@/components/products/product-visual";
-import { Reveal } from "@/components/shared/reveal";
+import { ProductNav } from "../products/product-nav";
+import { ProductContent } from "../products/product-content";
+import { ProductVisual } from "../products/product-visual";
+import { Reveal } from "../shared/reveal";
 import { PRODUCTS_META, PRODUCTS_PIN_DISTANCE, type Product } from "@/lib/data/products";
 
 gsap.registerPlugin(ScrollTrigger);

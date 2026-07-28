@@ -1,14 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
-import { ThemeProvider } from "@/components/layout/theme-provider";
-import { LocaleProvider } from "@/components/providers/locale-provider";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from "@/components/ui/sonner";
-import { Navbar } from "@/components/layout/navbar";
-import { ClosingStatement } from "@/components/layout/footer";
+import { ThemeProvider } from "../components/layout/theme-provider";
+import { LocaleProvider } from "../components/providers/locale-provider";
+import { TooltipProvider } from "../components/ui/tooltip";
+import { Toaster } from "../components/ui/sonner";
+import { Navbar } from "../components/layout/navbar";
+
 import { LOCALE_COOKIE, defaultLocale, isLocale } from "@/lib/i18n/config";
 import "./globals.css";
+import { ClosingStatement } from "../components/layout/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

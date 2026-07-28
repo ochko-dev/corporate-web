@@ -1,9 +1,9 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { StaggerGroup, StaggerItem } from "@/components/shared/reveal";
+import { StaggerGroup, StaggerItem } from "../shared/reveal";
 import { team } from "@/lib/data/team";
-import { TeamCard } from "@/components/team/TeamCard";
+import { TeamCard } from "../team/TeamCard";
 
 export function TeamSection() {
   const t = useTranslations("team");

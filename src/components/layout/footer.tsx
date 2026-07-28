@@ -2,12 +2,8 @@
 
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
-import {
-  GithubIcon,
-  LinkedinIcon,
-  XIcon,
-  DribbbleIcon,
-} from "@/components/icons/social";
+import { DribbbleIcon, GithubIcon, LinkedinIcon, XIcon } from "../icons/social";
+
 
 const socialLinks = [
   { icon: GithubIcon, href: "#", label: "Facebook" },

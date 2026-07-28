@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, ChevronDown, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useLocaleSwitcher } from "@/components/providers/locale-provider";
+import { useLocaleSwitcher } from "../providers/locale-provider";
 import type { Locale } from "@/lib/i18n/config";
 
 interface LanguageSwitcherProps {

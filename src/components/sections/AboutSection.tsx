@@ -4,9 +4,9 @@ import { useLayoutEffect, useRef, useSyncExternalStore } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLocale, useTranslations } from "next-intl";
-import { AboutIntroduction } from "@/components/about/AboutIntroduction";
-import { VisionCards, type VisionCard } from "@/components/about/VisionCards";
-import Logo from "@/components/icons/Logo";
+import { AboutIntroduction } from "../about/AboutIntroduction";
+import { VisionCards, type VisionCard } from "../about/VisionCards";
+import Logo from "../icons/Logo";
 import { ABOUT_PHASES, PIN_DISTANCE } from "@/lib/about-phases";
 
 gsap.registerPlugin(ScrollTrigger);

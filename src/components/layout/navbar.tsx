@@ -5,19 +5,19 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "../ui/button";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from "../ui/sheet";
 
-import { Logo } from "@/components/layout/logo";
-import { AnimatedTagline } from "@/components/layout/animated-tagline";
-import { ThemeToggle } from "@/components/layout/theme-toggle";
-import { LanguageSwitcher } from "@/components/layout/language-switcher";
+import { Logo } from "../layout/logo";
+import { AnimatedTagline } from "../layout/animated-tagline";
+import { ThemeToggle } from "../layout/theme-toggle";
+import { LanguageSwitcher } from "../layout/language-switcher";
 import { navLinks } from "@/lib/data/nav";
 import { cn } from "@/lib/utils";
 
