@@ -17,7 +17,7 @@ export const VisionCards = forwardRef<HTMLDivElement, { cards: readonly VisionCa
     return (
       <div
         ref={ref}
-        className="mx-auto grid w-full  grid-cols-2 gap-x-6 gap-y-8 pt-20 text-left sm:grid-cols-4 sm:gap-x-0 sm:gap-y-0 sm:divide-x sm:divide-border"
+        className="mx-auto grid w-full  grid-cols-2 gap-x-4 gap-y-4 pt-6 text-left sm:grid-cols-4 sm:gap-x-0 sm:gap-y-0 sm:pt-20 sm:divide-x sm:divide-border"
       >
         {cards.map((card, index) => {
           const Icon = VISION_ICONS[index % VISION_ICONS.length];

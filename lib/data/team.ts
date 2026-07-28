@@ -5,9 +5,10 @@ export type PositionKey =
   | "seniorBackendDeveloper"
   | "seniorFrontendDeveloper"
   | "projectManager"
-  | "dataScientist"
   | "frontendDeveloper"
-  | "dataAnalyst";
+  | "dataAnalyst"
+  | "systemAnalyst"
+  | "researchSpecialist";
 
 export interface TeamMember {
   firstName: string;
@@ -21,62 +22,62 @@ export interface TeamMember {
 export const team: TeamMember[] = [
   {
     firstName: "Anujin",
-    // lastName: "Marsh",
+    lastName: "TumenBaatar",
     positionKey: "ceo",
     initials: "A",
   },
   {
     firstName: "Munkhtsogt",
-    // lastName: "Chen",
+    lastName: "Tsogbadrakh",
     positionKey: "fullstackDeveloper",
     initials: "M",
   },
   {
     firstName: "Saruul",
-    // lastName: "Nair",
+    lastName: "Ganbold",
     positionKey: "seniorBackendDeveloper",
     initials: "S",
   },
   {
     firstName: "Mirgalim",
-    // lastName: "Alvarez",
+    lastName: "Aspirant",
     positionKey: "seniorFrontendDeveloper",
     initials: "M",
   },
   {
     firstName: "Odmaa",
-    // lastName: "Kowalski",
+    lastName: "Boldbayar",
     positionKey: "projectManager",
     initials: "O",
   },
   {
-    firstName: "Hongorzul",
-    // lastName: "Okafor",
-    positionKey: "dataScientist",
+    firstName: "Khongorzul",
+    lastName: "Baatar",
+    positionKey: "systemAnalyst",
     initials: "H",
   },
   {
     firstName: "Ochbadrakh",
-    // lastName: "Suzuki",
+    lastName: "Oyunbadrakh",
     positionKey: "frontendDeveloper",
     initials: "O",
   },
   {
     firstName: "Uskhbayar",
-    // lastName: "O'Connor",
+    lastName: "Batbayar",
     positionKey: "frontendDeveloper",
     initials: "U",
   },
-    {
+  {
     firstName: "Nymbayar",
-    // lastName: "O'Connor",
+    lastName: "Batbayar",
     positionKey: "dataAnalyst",
     initials: "N",
   },
-    {
-    firstName: "Tumendembereljaw",
-    // lastName: "O'Connor",
-    positionKey: "dataAnalyst",
+  {
+    firstName: "Tumendelgerjav",
+    lastName: "Batsukh",
+    positionKey: "researchSpecialist",
     initials: "T",
   },
 ];

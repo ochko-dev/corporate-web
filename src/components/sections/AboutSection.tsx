@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLocale, useTranslations } from "next-intl";
 import { AboutIntroduction } from "../about/AboutIntroduction";
 import { VisionCards, type VisionCard } from "../about/VisionCards";
-import Logo from "../icons/Logo";
+import { ParticleLogoCluster } from "../about/ParticleLogoCluster";
 import { ABOUT_PHASES, PIN_DISTANCE } from "@/lib/about-phases";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -25,14 +25,6 @@ function getReduceMotionSnapshot() {
 
 function getReduceMotionServerSnapshot() {
   return false;
-}
-
-function AboutWatermark() {
-  return (
-    <div className="pointer-events-none absolute  right-4 z-0 origin-top-right scale-[7] opacity-[0.08] sm:top-8 sm:right-10 sm:scale-[9]">
-      <Logo />
-    </div>
-  );
 }
 
 function AboutGlow() {
@@ -80,7 +72,9 @@ export function AboutSection() {
       pin: true,
       anticipatePin: 1,
       invalidateOnRefresh: true,
-      onUpdate: (self) => contentTlRef.current?.progress(self.progress),
+      onUpdate: (self) => {
+        contentTlRef.current?.progress(self.progress);
+      },
     });
 
     return () => pinTrigger.kill();
@@ -159,7 +153,7 @@ export function AboutSection() {
         className="relative isolate overflow-hidden bg-background py-32 text-foreground"
       >
         <AboutGlow />
-        <AboutWatermark />
+        <ParticleLogoCluster />
         <div className="pointer-events-none absolute inset-0 bg-grid mask-fade-b opacity-40 dark:opacity-20" />
         <div className="pointer-events-none absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay" />
 
@@ -187,18 +181,20 @@ export function AboutSection() {
       className="relative isolate h-svh overflow-hidden bg-background text-foreground"
     >
       <AboutGlow />
-      <AboutWatermark />
+      <ParticleLogoCluster />
       <div className="pointer-events-none absolute inset-0 bg-grid mask-fade-b opacity-[0.08]" />
       <div className="pointer-events-none absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay" />
 
       {/* Label sits in normal flow above the intro so it can never collide
           with the paragraph text; the vision items stack below the intro
           and reveal one at a time as the pin scrubs, so nothing the user
-          has already read gets taken away. */}
-      <div className="section-container relative z-10 flex h-full flex-col items-start gap-10 pt-28 sm:gap-10 sm:pt-32">
+          has already read gets taken away. It's centered independently of
+          the intro/cards column below (which hugs the right edge to mirror
+          the particle cluster). */}
+      <div className="section-container relative z-10 flex h-full flex-col items-end gap-4 pt-24 sm:gap-10 sm:pt-32">
         <div
           ref={labelRef}
-          className="text-xs font-semibold tracking-[0.4em] text-primary uppercase opacity-0"
+          className="w-full text-center text-xs font-semibold tracking-[0.4em] text-primary uppercase opacity-0"
         >
           {ABOUT_LABEL}
         </div>

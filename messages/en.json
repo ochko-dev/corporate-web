@@ -59,14 +59,15 @@
   "team": {
     "eyebrow": "Our team",
     "positions": {
-      "ceo": "CEO",
-      "fullstackDeveloper": "FullStack developer",
+      "ceo": "Chief Executive Officer (CEO)",
+      "fullstackDeveloper": "Senior system developer",
       "seniorBackendDeveloper": "Senior backend developer",
       "seniorFrontendDeveloper": "senior frontend developer",
       "projectManager": "Project Manager",
-      "dataScientist": "Data Scientist",
       "frontendDeveloper": "Frontend developer",
-      "dataAnalyst": "Data analyst"
+      "dataAnalyst": "Data analyst",
+      "researchSpecialist": "Research Specialist",
+      "systemAnalyst": "System Analyst"
     }
   },
   "footer": {

@@ -33,7 +33,7 @@ const siteUrl = "https://odin.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Odin — Engineering the next generation of software",
+    default: "ODIN tech lab LLC",
     template: "%s · Odin",
   },
   description:
@@ -50,18 +50,21 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Odin" }],
   creator: "Odin",
+  icons: {
+    icon: "/logo.svg",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    title: "Odin — Engineering the next generation of software",
+    title: "ODIN tech lab LLC",
     description:
       "A premium software studio building web, mobile, cloud and AI products for ambitious teams.",
-    siteName: "Odin",
+    siteName: "ODIN tech lab LLC",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Odin — Engineering the next generation of software",
+    title: "ODIN tech lab LLC",
     description:
       "A premium software studio building web, mobile, cloud and AI products for ambitious teams.",
   },

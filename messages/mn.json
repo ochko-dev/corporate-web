@@ -60,13 +60,14 @@
     "eyebrow": "Манай баг",
     "positions": {
       "ceo": "Гүйцэтгэх захирал",
-      "fullstackDeveloper": "Фулстак хөгжүүлэгч",
+      "fullstackDeveloper": "Ахлах систем хөгжүүлэгч",
       "seniorBackendDeveloper": "Ахлах бэкенд хөгжүүлэгч",
       "seniorFrontendDeveloper": "Ахлах фронтенд хөгжүүлэгч",
       "projectManager": "Төслийн менежер",
-      "dataScientist": "Дата сайентист",
       "frontendDeveloper": "Фронтенд хөгжүүлэгч",
-      "dataAnalyst": "Дата аналист"
+      "dataAnalyst": "Дата аналист",
+      "researchSpecialist": "Судалгаа мэргэжилтэн",
+      "systemAnalyst": "Систем аналист"
     }
   },
   "footer": {

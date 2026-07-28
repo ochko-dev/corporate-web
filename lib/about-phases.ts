@@ -1,12 +1,16 @@
 /**
  * Content and scroll-choreography constants for the cinematic About section.
- * AboutSection pins the section and scrubs a single GSAP timeline across
- * `TIMELINE_LENGTH` abstract units (treated as percent-of-sequence) against
- * scroll distance `PIN_DISTANCE`. Every stage below is a position on that
- * 0–100 timeline: the intro types in early and stays on screen, then the
- * vision items reveal one at a time across the rest of the pin.
+ *
+ * The logo cluster is already fully formed by the time the section is
+ * reached, so the section's whole pin scroll drives a single GSAP timeline
+ * across `TIMELINE_LENGTH` abstract units (treated as percent-of-sequence):
+ * the intro types in early and stays on screen, then the vision items reveal
+ * one at a time across the rest.
  */
-export const PIN_DISTANCE = "+=400%";
+const CONTENT_PERCENT = 400;
+
+export const PIN_DISTANCE = `+=${CONTENT_PERCENT}%`;
+
 export const TIMELINE_LENGTH = 100;
 
 export const ABOUT_PHASES = {
