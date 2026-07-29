@@ -72,12 +72,13 @@
     }
   },
   "footer": {
-    "closingLines": ["Intelligence is the foundation", "of every better decision."],
-    "findUsPrefix": "Find us",
-    "findUsAccent": "in Ulaanbaatar",
+    "closingLines": ["One eye", "One view"],
+    "findUsPrefix": "Contact ",
+    "findUsAccent": "us",
+    "address": "Khan-Uul District, 15th Khoroo, Regis Place, 4th floor, Room 402B",
     "addressLabel": "Address",
     "getInTouchLabel": "Get in touch",
-    "copyright": "© {year} ODIN tech. All rights reserved."
+    "copyright": "© {year} ODIN TECH LAB LLC. All rights reserved."
   },
   "contact": {
     "title": "Contact Page",

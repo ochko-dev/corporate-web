@@ -9,7 +9,8 @@ import { Navbar } from "../components/layout/navbar";
 
 import { LOCALE_COOKIE, defaultLocale, isLocale } from "@/src/lib/i18n/config";
 import "./globals.css";
-import { ClosingStatement } from "../components/layout/footer";
+import { Footer } from "../components/layout/footer";
+import CursorFirework from "../components/CursorFirework";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,7 @@ const siteUrl = "https://odin.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "ODIN tech lab LLC",
+    default: "ODIN TECH LAB LLC",
     template: "%s · Odin",
   },
   description:
@@ -57,14 +58,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    title: "ODIN tech lab LLC",
+    title: "ODIN TECH LAB LLC",
     description:
       "A premium software studio building web, mobile, cloud and AI products for ambitious teams.",
-    siteName: "ODIN tech lab LLC",
+    siteName: "ODIN TECH LAB LLC",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ODIN tech lab LLC",
+    title: "ODIN TECH LAB LLC",
     description:
       "A premium software studio building web, mobile, cloud and AI products for ambitious teams.",
   },
@@ -104,11 +105,12 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <CursorFirework/>
           <LocaleProvider initialLocale={locale}>
             <TooltipProvider delay={150}>
               <Navbar />
               <main className="flex-1">{children}</main>
-              <ClosingStatement />
+              <Footer />
               <Toaster position="bottom-right" />
             </TooltipProvider>
           </LocaleProvider>

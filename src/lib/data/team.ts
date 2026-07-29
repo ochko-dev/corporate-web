@@ -63,7 +63,7 @@ export const team: TeamMember[] = [
     initials: "O",
   },
   {
-    firstName: "Uskhbayar",
+    firstName: "Usukhbayar",
     lastName: "Batbayar",
     positionKey: "frontendDeveloper",
     initials: "U",

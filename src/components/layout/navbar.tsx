@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -38,15 +38,6 @@ export function Navbar() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 16);
   });
-
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [open]);
-
 
   return (
     <motion.header

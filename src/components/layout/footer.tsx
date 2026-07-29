@@ -13,20 +13,16 @@ const socialLinks = [
 ];
 
 const CONTACT = {
-  address: "Чингисийн өргөн чөлөө 33/2, Стадион Оргил, 17011, Ulaanbaatar",
-  phone: "+976 9999 9999",
-  phoneHref: "+97699999999",
-  email: "odintech@email.com",
+  address: "Хан-Уул дүүрэг, 15-р хороо, Режис Плейс, 4 давхар,402Б тоот",
+  phone: "+976 7505-9911",
+  phoneHref: "+97675059911",
+  email: "contact@odintech.mn",
 };
 
-const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent(
-  "Чингисийн өргөн чөлөө 33/2, Стадион Оргил, Ulaanbaatar 17011, Mongolia",
-)}&output=embed`;
-
-export function ClosingStatement() {
+const MAP_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.008772487023!2d106.90723917710062!3d47.90067557121841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d96936ef95fd02b%3A0x4ddcd9c18ef16c15!2sRegis%20Place!5e1!3m2!1smn!2smn!4v1785311109838!5m2!1smn!2smn";
+export function Footer() {
   const t = useTranslations("footer");
-  const [lineOne, lineTwo] = t.raw("closingLines") as [string, string];
-
   return (
     <footer
       id="contact"
@@ -42,10 +38,9 @@ export function ClosingStatement() {
         {/* Closing statement + CTA */}
         <div className="flex flex-col items-center gap-10 text-center py-10">
           <p className="max-w-2xl text-3xl leading-snug font-medium text-balance sm:text-4xl lg:text-5xl">
-            {lineOne}
-            <br />
+         
             <span className="font-serif text-gradient font-normal italic">
-              {lineTwo}
+              {t("closingLines.0")},{t("closingLines.1")}
             </span>
           </p>
         </div>
@@ -79,7 +74,7 @@ export function ClosingStatement() {
                 </p>
                 <p className="mt-3 flex max-w-sm items-start gap-2 text-sm leading-relaxed text-muted-foreground">
                   <MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
-                  {CONTACT.address}
+                  {t("address")}
                 </p>
               </div>
 
@@ -115,7 +110,7 @@ export function ClosingStatement() {
           {t("copyright", { year: new Date().getFullYear() })}
         </p>
 
-        <div className="flex items-center gap-2">
+        {/* <div className="flex items-center gap-2">
           {socialLinks.map(({ icon: Icon, href, label }) => (
             <a
               key={label}
@@ -128,7 +123,7 @@ export function ClosingStatement() {
               <Icon className="size-4" />
             </a>
           ))}
-        </div>
+        </div> */}
       </div>
     </footer>
   );
