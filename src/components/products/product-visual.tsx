@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Product } from "@/lib/data/products";
+import type { Product } from "@/src/lib/data/products";
 
 const IMAGES: Record<Product["visual"], { src: string; width: number; height: number }> = {
   intelligence: { src: "/products_images/product1.png", width: 1815, height: 867 },

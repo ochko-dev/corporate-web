@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 
 type Vec3 = { x: number; y: number; z: number };
 

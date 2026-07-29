@@ -1,7 +1,7 @@
 "use client";
 
 import { forwardRef } from "react";
-import type { Product } from "@/lib/data/products";
+import type { Product } from "@/src/lib/data/products";
 
 /** ProductsSection queries `.product-title` / `.product-description` /
  *  `.product-cta` inside the returned ref to sequence the crossfade

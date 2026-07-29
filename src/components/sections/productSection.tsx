@@ -8,7 +8,7 @@ import { ProductNav } from "../products/product-nav";
 import { ProductContent } from "../products/product-content";
 import { ProductVisual } from "../products/product-visual";
 import { Reveal } from "../shared/reveal";
-import { PRODUCTS_META, PRODUCTS_PIN_DISTANCE, type Product } from "@/lib/data/products";
+import { PRODUCTS_META, PRODUCTS_PIN_DISTANCE, type Product } from "@/src/lib/data/products";
 
 gsap.registerPlugin(ScrollTrigger);
 

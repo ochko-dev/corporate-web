@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
-import { Reveal } from "@/components/shared/reveal";
+import { cn } from "@/src/lib/utils";
+import { Reveal } from "./reveal";
 
 interface SectionHeadingProps {
   eyebrow: string;

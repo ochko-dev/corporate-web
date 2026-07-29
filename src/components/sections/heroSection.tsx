@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { DataSphere } from "../shared/data-sphere";
+import { scrollToHash } from "@/src/lib/scroll-to-hash";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -169,6 +170,9 @@ export function Hero() {
       <a
         ref={scrollCueRef}
         href="#about"
+        onClick={(e) => {
+          if (scrollToHash("#about")) e.preventDefault();
+        }}
         aria-label={t("scrollCue")}
         className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2"
       >

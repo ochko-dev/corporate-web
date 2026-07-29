@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { StaggerGroup, StaggerItem } from "../shared/reveal";
-import { team } from "@/lib/data/team";
+import { team } from "@/src/lib/data/team";
 import { TeamCard } from "../team/TeamCard";
 
 export function TeamSection() {

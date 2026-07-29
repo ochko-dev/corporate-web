@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 import LogoIcon from "../icons/Logo"; // your SVG component
 
 export function Logo({ className }: { className?: string }) {

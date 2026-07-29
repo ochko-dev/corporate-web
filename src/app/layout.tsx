@@ -7,7 +7,7 @@ import { TooltipProvider } from "../components/ui/tooltip";
 import { Toaster } from "../components/ui/sonner";
 import { Navbar } from "../components/layout/navbar";
 
-import { LOCALE_COOKIE, defaultLocale, isLocale } from "@/lib/i18n/config";
+import { LOCALE_COOKIE, defaultLocale, isLocale } from "@/src/lib/i18n/config";
 import "./globals.css";
 import { ClosingStatement } from "../components/layout/footer";
 

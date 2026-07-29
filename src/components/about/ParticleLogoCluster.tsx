@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 import { ParticleField } from "../shared/particle-field";
-import { buildLogoShape } from "@/lib/particles/shapes/logo";
-import type { SceneBlend, Shape } from "@/lib/particles/types";
+import { buildLogoShape } from "@/src/lib/particles/shapes/logo";
+import type { SceneBlend, Shape } from "@/src/lib/particles/types";
 
 const CLUSTER_PARTICLE_COUNT = 1400;
 

@@ -1,12 +1,12 @@
 "use client";
 
 import { forwardRef, useImperativeHandle } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 import {
   useParticleField,
   type ParticleFieldControls,
   type UseParticleFieldOptions,
-} from "@/lib/particles/useParticleField";
+} from "@/src/lib/particles/useParticleField";
 
 export type { ParticleFieldControls };
 

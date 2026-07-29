@@ -15,7 +15,7 @@ import {
   localeFlags,
   localeNames,
   type Locale,
-} from "@/lib/i18n/config";
+} from "@/src/lib/i18n/config";
 import enMessages from "@/messages/en.json";
 import mnMessages from "@/messages/mn.json";
 

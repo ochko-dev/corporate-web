@@ -1,6 +1,6 @@
 import Image from "next/image";
 import LogoMark from "../icons/Logo";
-import type { TeamMember } from "@/lib/data/team";
+import type { TeamMember } from "@/src/lib/data/team";
 
 interface TeamCardProps {
   member: TeamMember;

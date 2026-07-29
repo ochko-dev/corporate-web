@@ -2,8 +2,8 @@
 
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
-import { cn } from "@/lib/utils";
-import type { Product } from "@/lib/data/products";
+import { cn } from "@/src/lib/utils";
+import type { Product } from "@/src/lib/data/products";
 
 interface ProductNavProps {
   products: Product[];
