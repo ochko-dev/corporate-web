@@ -18,8 +18,13 @@ import { Logo } from "../layout/logo";
 import { AnimatedTagline } from "../layout/animated-tagline";
 import { ThemeToggle } from "../layout/theme-toggle";
 import { LanguageSwitcher } from "../layout/language-switcher";
-import { navLinks } from "@/lib/data/nav";
-import { cn } from "@/lib/utils";
+import { navLinks } from "@/src/lib/data/nav";
+import { cn } from "@/src/lib/utils";
+import { scrollToHash } from "@/src/lib/scroll-to-hash";
+
+function handleHashClick(event: React.MouseEvent<HTMLAnchorElement>, href: string) {
+  if (scrollToHash(href)) event.preventDefault();
+}
 
 export function Navbar() {
   const t = useTranslations("nav");
@@ -77,6 +82,7 @@ export function Navbar() {
           {/* LOGO */}
           <a
             href="#top"
+            onClick={(e) => handleHashClick(e, "#top")}
             className="flex shrink-0 items-center rounded-full outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
           >
             <Logo />
@@ -99,6 +105,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onMouseEnter={() => setHovered(link.href)}
+                  onClick={(e) => handleHashClick(e, link.href)}
                   className="
                     relative rounded-full px-3.5 py-2
                     text-sm font-medium
@@ -131,7 +138,7 @@ export function Navbar() {
 
 
             <div className="flex items-center gap-1">
-              <LanguageSwitcher className="hidden lg:block" />
+              <LanguageSwitcher className="hidden lg:flex" />
               <ThemeToggle />
             </div>
 
@@ -181,7 +188,10 @@ export function Navbar() {
                     <a
                       key={link.href}
                       href={link.href}
-                      onClick={() => setOpen(false)}
+                      onClick={(e) => {
+                        handleHashClick(e, link.href);
+                        setOpen(false);
+                      }}
                       className="
                         rounded-xl px-3.5 py-3
                         text-base font-medium

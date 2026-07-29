@@ -15,6 +15,7 @@
   "about": {
     "label": "About ODIN",
     "intro": "Our company is a national private-sector enterprise operating in Mongolia in the development of technology, artificial intelligence, and data-driven solutions. We are committed to bringing advanced technologies into practical use to support decision-making in government and business organizations and to improve productivity across key sectors of the economy.",
+    "downloadPdf": "Download pdf",
     "vision": [
       {
         "title": "Intelligent Data",

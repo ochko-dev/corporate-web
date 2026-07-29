@@ -3,13 +3,21 @@
 import { useLayoutEffect, useRef, useSyncExternalStore } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { AboutIntroduction } from "../about/AboutIntroduction";
 import { VisionCards, type VisionCard } from "../about/VisionCards";
 import { ParticleLogoCluster } from "../about/ParticleLogoCluster";
-import { ABOUT_PHASES, PIN_DISTANCE } from "@/lib/about-phases";
 
 gsap.registerPlugin(ScrollTrigger);
+
+// How far the section stays pinned while the cards scrub in.
+const PIN_DISTANCE = "+=200%";
+
+// Timeline positions (relative units — only their proportions matter, since
+// the timeline is driven by the pin's 0–1 progress, not played in real time).
+const CARDS_START = 6;
+const CARDS_END = 96;
 
 const REDUCE_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
 
@@ -30,9 +38,9 @@ function getReduceMotionServerSnapshot() {
 function AboutGlow() {
   return (
     <>
-      <div className="pointer-events-none absolute top-[-10%] left-1/2 -z-10 h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-[#075D87]/30 blur-[120px]" />
-      <div className="pointer-events-none absolute right-[8%] bottom-[-5%] -z-10 h-[340px] w-[340px] rounded-full bg-[#2FB7C3]/25 blur-[110px]" />
-      <div className="pointer-events-none absolute bottom-[20%] left-[6%] -z-10 h-[300px] w-[300px] rounded-full bg-[#0E7FB0]/20 blur-[110px]" />
+      <div className="pointer-events-none absolute top-[-10%] left-1/2 -z-10 h-140 w-140 -translate-x-1/2 rounded-full bg-[#075D87]/30 blur-[120px]" />
+      <div className="pointer-events-none absolute right-[8%] bottom-[-5%] -z-10 h-85 w-85 rounded-full bg-[#2FB7C3]/25 blur-[110px]" />
+      <div className="pointer-events-none absolute bottom-[20%] left-[6%] -z-10 h-75 w-75 rounded-full bg-[#0E7FB0]/20 blur-[110px]" />
     </>
   );
 }
@@ -45,8 +53,6 @@ export function AboutSection() {
   const VISION_CARDS = t.raw("vision") as VisionCard[];
 
   const sectionRef = useRef<HTMLElement>(null);
-  const labelRef = useRef<HTMLDivElement>(null);
-  const introRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const contentTlRef = useRef<gsap.core.Timeline | null>(null);
 
@@ -80,60 +86,42 @@ export function AboutSection() {
     return () => pinTrigger.kill();
   }, [reduceMotion]);
 
-  // Owns the label/typing/vision-card reveal. Rebuilt whenever the locale
-  // changes, since the translated intro/vision text changes the number of
-  // `.about-char`/`.vision-card` elements it queries. This trigger only
-  // scrubs (no `pin`), so rebuilding it never touches the pin-spacer above.
+  // Owns the vision-card reveal only. Rebuilt whenever the locale changes,
+  // since the translated vision text changes the number of `.vision-card`
+  // elements it queries. This trigger only scrubs (no `pin`), so rebuilding
+  // it never touches the pin-spacer above. The label/intro/logo appear once
+  // on entry (see the `motion.div` wrappers below) and are no longer part
+  // of this scroll-scrubbed timeline.
   useLayoutEffect(() => {
     const section = sectionRef.current;
     if (!section || reduceMotion) return;
 
     const ctx = gsap.context(() => {
-      const chars = introRef.current?.querySelectorAll<HTMLElement>(".about-char") ?? [];
       const cards = cardsRef.current?.querySelectorAll<HTMLElement>(".vision-card") ?? [];
 
-      gsap.set(labelRef.current, { opacity: 0, y: 10 });
       gsap.set(cards, { opacity: 0, y: 28, scale: 0.94 });
 
       const tl = gsap.timeline({ paused: true });
       contentTlRef.current = tl;
 
-      const typingSpan = ABOUT_PHASES.typingEnd - ABOUT_PHASES.typingStart;
-      const charDuration = Math.min(0.4, typingSpan * 0.6);
-      const cardsSpan = ABOUT_PHASES.cardsEnd - ABOUT_PHASES.cardsStart;
+      const cardsSpan = CARDS_END - CARDS_START;
       // Each card's own reveal is shorter than the gap to the next one, so
       // they land one at a time instead of blurring into a single fade.
       const cardStagger = cards.length ? cardsSpan / cards.length : 0;
       const cardDuration = Math.min(6, cardStagger * 0.6);
 
       tl.fromTo(
-        labelRef.current,
-        { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, duration: 4 },
-        ABOUT_PHASES.labelIn,
-      )
-        .fromTo(
-          chars,
-          { opacity: 0 },
-          {
-            opacity: 1,
-            duration: charDuration,
-            stagger: chars.length ? (typingSpan - charDuration) / chars.length : 0,
-          },
-          ABOUT_PHASES.typingStart,
-        )
-        .fromTo(
-          cards,
-          { opacity: 0, y: 32, scale: 0.94 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: cardDuration,
-            stagger: cardStagger,
-          },
-          ABOUT_PHASES.cardsStart,
-        );
+        cards,
+        { opacity: 0, y: 32, scale: 0.94 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: cardDuration,
+          stagger: cardStagger,
+        },
+        CARDS_START,
+      );
 
       // Sync to wherever the (untouched) pin currently is, so a locale
       // switch mid-scroll doesn't reset the reveal back to its start.
@@ -146,25 +134,27 @@ export function AboutSection() {
 
   if (reduceMotion) {
     // No pin, no scrub: a plain top-to-bottom reading order so nothing
-    // overlaps.
+    // overlaps. `initial={false}` keeps the motion.divs static here so
+    // prefers-reduced-motion is still honored.
     return (
       <section
         id="about"
         className="relative isolate overflow-hidden bg-background py-32 text-foreground"
       >
         <AboutGlow />
-        <ParticleLogoCluster />
+        <motion.div initial={false}>
+          <ParticleLogoCluster />
+        </motion.div>
         <div className="pointer-events-none absolute inset-0 bg-grid mask-fade-b opacity-40 dark:opacity-20" />
         <div className="pointer-events-none absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay" />
 
         <div className="section-container relative z-10 flex flex-col items-center gap-14 text-center">
-          <p className="text-xs font-semibold tracking-[0.4em] text-primary uppercase">
-            {ABOUT_LABEL}
-          </p>
-
-          <div className="[&_.about-char]:opacity-100">
+          <motion.div initial={false} className="flex flex-col items-center gap-14">
+            <p className="text-xs font-semibold tracking-[0.4em] text-primary uppercase">
+              {ABOUT_LABEL}
+            </p>
             <AboutIntroduction paragraphs={INTRO_PARAGRAPHS} />
-          </div>
+          </motion.div>
 
           <div className="[&_.vision-card]:opacity-100">
             <VisionCards cards={VISION_CARDS} />
@@ -181,24 +171,30 @@ export function AboutSection() {
       className="relative isolate h-svh overflow-hidden bg-background text-foreground"
     >
       <AboutGlow />
-      <ParticleLogoCluster />
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration:0.9, ease: "easeOut" }}
+      >
+        <ParticleLogoCluster />
+      </motion.div>
       <div className="pointer-events-none absolute inset-0 bg-grid mask-fade-b opacity-[0.08]" />
       <div className="pointer-events-none absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay" />
 
-      {/* Label sits in normal flow above the intro so it can never collide
-          with the paragraph text; the vision items stack below the intro
-          and reveal one at a time as the pin scrubs, so nothing the user
-          has already read gets taken away. It's centered independently of
-          the intro/cards column below (which hugs the right edge to mirror
-          the particle cluster). */}
       <div className="section-container relative z-10 flex h-full flex-col items-end gap-4 pt-24 sm:gap-10 sm:pt-32">
-        <div
-          ref={labelRef}
-          className="w-full text-center text-xs font-semibold tracking-[0.4em] text-primary uppercase opacity-0"
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4}}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="flex w-full flex-col items-end gap-4 sm:gap-10"
         >
-          {ABOUT_LABEL}
-        </div>
-        <AboutIntroduction ref={introRef} paragraphs={INTRO_PARAGRAPHS} />
+          <div className="w-full text-center text-xs font-semibold tracking-[0.4em] text-primary uppercase">
+            {ABOUT_LABEL}
+          </div>
+          <AboutIntroduction paragraphs={INTRO_PARAGRAPHS} />
+        </motion.div>
         <VisionCards ref={cardsRef} cards={VISION_CARDS} />
       </div>
     </section>
