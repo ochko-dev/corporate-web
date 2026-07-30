@@ -25,9 +25,9 @@ export function AboutSection() {
 
   return (
     <section
-      id="about"
-      className="relative isolate h-svh overflow-hidden bg-background text-foreground"
-    >
+  id="about"
+  className="relative isolate min-h-svh overflow-hidden bg-background text-foreground"
+>
       <AboutGlow />
       <motion.div
         initial={{ opacity: 0, y: 24 }}
@@ -41,7 +41,7 @@ export function AboutSection() {
       <div className="pointer-events-none absolute inset-0 bg-grid mask-fade-b opacity-[0.08]" />
       <div className="pointer-events-none absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay" />
 
-      <div className="section-container relative z-10 flex h-full flex-col items-end gap-4 pt-24 sm:gap-10 sm:pt-32">
+      <div className="section-container relative z-10 flex min-h-full flex-col items-end gap-4 py-24 sm:gap-10 sm:py-32">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +54,9 @@ export function AboutSection() {
           </div>
           <AboutIntroduction paragraphs={INTRO_PARAGRAPHS} />
         </motion.div>
-        <VisionCards  cards={VISION_CARDS} />
+       <div className="w-full pb-8 sm:pb-0">
+  <VisionCards cards={VISION_CARDS} />
+</div>
       </div>
     </section>
   );
