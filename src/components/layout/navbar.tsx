@@ -191,10 +191,10 @@ export function Navbar() {
                     <div className="flex items-center uppercase">
                       <Logo />
 
-                      <span className="ml-2 text-[16px] font-bold tracking-tight">
+                      <span className=" text-[16px] font-bold tracking-tight">
                         ODIN{" "}
                         <span className="font-medium">
-                          tech
+                          tech lab
                         </span>
                       </span>
 

@@ -68,12 +68,10 @@ export function AnimatedTagline({ className }: { className?: string }) {
 
   return (
     <span className={cn("flex flex-col leading-tight", className)}>
-      {/* Wordmark above */}
       <span className="text-[16px] font-bold tracking-tight text-foreground">
-        ODIN <span className="font-medium">tech</span>
+        ODIN <span className="font-medium">tech lab</span>
       </span>
 
-      {/* Animated tagline below */}
       <span className="relative text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground">
         <span className="sr-only">{text}</span>
         <span aria-hidden className="whitespace-pre">

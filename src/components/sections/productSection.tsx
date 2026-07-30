@@ -136,14 +136,14 @@ style={{
                         {product.name}
                       </span>
                     </div>
-
-                    <h3 className="max-w-lg text-2xl font-semibold tracking-tight text-balance xl:text-3xl">
-                      {product.title}
-                    </h3>
-
-                    <p className="max-w-lg text-sm leading-relaxed text-muted-foreground xl:text-base">
-                      {product.description}
-                    </p>
+                    
+                 <p className="max-w-lg text-sm leading-relaxed xl:text-base">
+  <span className="text-2xl font-semibold text-foreground">
+    {product.title}
+  </span>{" "}
+  {product.description}
+</p>
+                    
 
                     {href && (
                       <a

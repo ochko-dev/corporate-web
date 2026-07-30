@@ -13,8 +13,8 @@
   },
   "tagline": "Open Data Intelligence Network",
   "about": {
-    "label": "About ODIN",
-    "intro": "Our company is a national private-sector enterprise operating in Mongolia in the development of technology, artificial intelligence, and data-driven solutions. We are committed to bringing advanced technologies into practical use to support decision-making in government and business organizations and to improve productivity across key sectors of the economy.",
+    "label": "About us",
+    "intro": "We’re a team of curious engineers using AI to accelerate how ideas become real. Based in Mongolia, we build practical tools that help organizations make better decisions and work more efficiently. We’re driven by curiosity, experimentation, and the belief that meaningful innovation comes from building, testing, and learning fast.",
     "downloadPdf": "Download pdf",
     "vision": [
       {
@@ -43,17 +43,17 @@
       "intelligence": {
         "name": "PORTAL system",
         "title": "PORTAL system",
-        "description": "By connecting open data and big data to the system within the legal framework, then training and processing it with AI models, we deliver accessible, accurate, and reliable information to users."
+        "description": " is a system that connects open and large-scale data within a clear legal framework, then uses AI to process and refine it into information people can actually use. The goal is simple: make data more accessible, accurate, and reliable for everyday decisions."
       },
       "map": {
         "name": "SURVEY system",
         "title": "SURVEY system",
-        "description": "We are developing this system to eliminate superficial approaches to public surveys, bring every citizen's voice into political and business decision-making, and generate useful quantitative data that has not previously been available."
+        "description": "uses AI to move beyond superficial polling and bring more citizens’ voices into real decisions. It turns public responses into structured, quantitative data that policymakers and businesses can actually use."
       },
       "analytics": {
-        "name": "ORGANIZATION’S virtual employee",
-        "title": "ORGANIZATION’S virtual employee",
-        "description": "Development of the virtual employee system is underway. A virtual employee is a software solution based on artificial intelligence (AI), trained on an organization's internal data, and capable of answering human questions, preparing reports and conclusions, issuing alerts, and performing automated response actions."
+        "name": " virtual assistant",
+        "title": " virtual assistant",
+        "description": "is an AI-powered software agent trained on an organization’s internal data. It can answer questions, prepare reports and summaries, raise alerts, and trigger automated actions to support day-to-day work."
       }
     }
   },
@@ -69,7 +69,7 @@
       "frontendDeveloper": "Frontend developer",
       "dataAnalyst": "Senior data analyst",
       "researchSpecialist": "senior research manager",
-      "systemAnalyst": "System Analyst",
+      "systemAnalyst": "Technical program manager",
       "DataScientist": "Data Scientist"
     },
     "names": {

@@ -32,7 +32,7 @@ export function TeamCard({ member, position, firstName, lastName }: TeamCardProp
                 alt={`${firstName} ${fullLastName}`}
                 fill
                 sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+                className="object-cover grayscale transition-all duration-300 ease-out group-hover:scale-[1.03] group-hover:grayscale-0"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             </>
