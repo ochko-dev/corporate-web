@@ -38,7 +38,10 @@ export function ThemeToggle({ shape = "circle", className }: ThemeToggleProps) {
       onThemeChange={setTheme}
       aria-label="Toggle theme"
       className={cn(
-        "inline-flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors outline-none hover:bg-muted/60 hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 [&_svg]:size-4",
+        "inline-flex size-8 items-center justify-center rounded-full text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
+        // icon: rotates on hover / keyboard focus, no background change
+        "[&_svg]:size-4 [&_svg]:transition-transform [&_svg]:duration-500 [&_svg]:ease-[cubic-bezier(0.21,0.47,0.32,0.98)]",
+        "motion-safe:hover:[&_svg]:-rotate-90 motion-safe:focus-visible:[&_svg]:-rotate-90",
         className,
       )}
     />

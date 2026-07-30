@@ -15,7 +15,7 @@ const SPHERE_MAX_SCALE = 1;
 const ASSEMBLE_DURATION = 7.4;
 const SETTLE_DELAY = ASSEMBLE_DURATION - 0.3;
 
-export function Hero() {
+export function HeroSection() {
   const t = useTranslations("hero");
   const sectionRef = useRef<HTMLElement>(null);
   const sphereWrapRef = useRef<HTMLDivElement>(null);

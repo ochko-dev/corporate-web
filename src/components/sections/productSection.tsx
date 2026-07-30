@@ -26,7 +26,7 @@ function ProductsGlow() {
   );
 }
 
-export function Products() {
+export function ProductSection() {
   const t = useTranslations("products");
   const PRODUCTS: Product[] = PRODUCTS_META.map((meta) => ({
     ...meta,
@@ -74,7 +74,7 @@ export function Products() {
                 <div
                   key={product.id}
                   onMouseEnter={() => setActiveIndex(index)}
-                  className={`group relative cursor-pointer overflow-hidden rounded-2xl border transition-[flex-grow,border-color,box-shadow] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+                  className={`group relative  overflow-hidden rounded-2xl border transition-[flex-grow,border-color,box-shadow] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
                     active
                       ? "grow-[4] border-primary/40 shadow-[0_30px_80px_-30px_rgba(47,183,195,0.3)]"
                       : "grow border-border/60 hover:border-border"

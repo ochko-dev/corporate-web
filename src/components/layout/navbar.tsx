@@ -78,9 +78,9 @@ export function Navbar() {
           >
             <Logo />
 
-          <AnimatedTagline
-  className="inline-flex tracking-[0.2em] text-primary uppercase"
-/>
+            <AnimatedTagline
+              className="inline-flex tracking-[0.2em] text-primary uppercase"
+            />
           </a>
 
 
@@ -98,11 +98,14 @@ export function Navbar() {
                   onMouseEnter={() => setHovered(link.href)}
                   onClick={(e) => handleHashClick(e, link.href)}
                   className="
-                    relative rounded-full px-3.5 py-2
+                    group relative isolate inline-flex items-center
+                    rounded-full px-3.5 py-2
                     text-sm font-medium
                     text-muted-foreground
-                    transition-colors
+                    outline-none transition-colors
                     hover:text-foreground
+                    focus-visible:text-foreground
+                    focus-visible:ring-3 focus-visible:ring-ring/50
                   "
                 >
 
@@ -111,7 +114,7 @@ export function Navbar() {
                       layoutId="navbar-hover-pill"
                       className="
                         absolute inset-0 -z-10
-                        rounded-full bg-muted/60
+                        rounded-full 
                       "
                       transition={{
                         type: "spring",
@@ -121,7 +124,34 @@ export function Navbar() {
                     />
                   )}
 
-                  {t(link.key)}
+                  {/* VERTICAL WORD ROLL */}
+                  <span className="relative block h-[1.25em] overflow-hidden leading-[1.25]">
+                    <span
+                      className="
+                        block transition-transform duration-300
+                        ease-[cubic-bezier(0.21,0.47,0.32,0.98)]
+                        group-hover:-translate-y-full
+                        group-focus-visible:-translate-y-full
+                        motion-reduce:transition-none
+                      "
+                    >
+                      {t(link.key)}
+                    </span>
+
+                    <span
+                      aria-hidden
+                      className="
+                        absolute inset-0 block translate-y-full
+                        transition-transform duration-300
+                        ease-[cubic-bezier(0.21,0.47,0.32,0.98)]
+                        group-hover:translate-y-0
+                        group-focus-visible:translate-y-0
+                        motion-reduce:transition-none
+                      "
+                    >
+                      {t(link.key)}
+                    </span>
+                  </span>
 
                 </a>
               ))}

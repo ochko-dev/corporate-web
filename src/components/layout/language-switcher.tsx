@@ -60,12 +60,47 @@ export function LanguageSwitcher({ variant = "toggle", className }: LanguageSwit
       onClick={() => handleSelect(otherLocale)}
       aria-label={`Switch to ${localeNames[otherLocale]}`}
       className={cn(
-        "flex items-center gap-1.5 rounded-full border border-transparent px-3 py-2 text-sm font-medium text-muted-foreground outline-none transition-colors hover:bg-muted/60 hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
+        "group flex items-center gap-1.5 rounded-full border border-transparent px-3 py-2 text-sm font-medium text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
         className,
       )}
     >
-      <Globe className="size-4" />
-      <span className="uppercase">{locale}</span>
+      <Globe
+        className="
+          size-4 transition-transform duration-500
+          ease-[cubic-bezier(0.21,0.47,0.32,0.98)]
+          motion-safe:group-hover:rotate-180
+          motion-safe:group-focus-visible:rotate-180
+        "
+      />
+
+      {/* VERTICAL ROLL: current locale out, target locale in */}
+      <span className="relative block h-[1.25em] overflow-hidden text-center leading-[1.25] uppercase">
+        <span
+          className="
+            block whitespace-nowrap transition-transform duration-300
+            ease-[cubic-bezier(0.21,0.47,0.32,0.98)]
+            group-hover:-translate-y-full
+            group-focus-visible:-translate-y-full
+            motion-reduce:transition-none
+          "
+        >
+          {locale}
+        </span>
+
+        <span
+          aria-hidden
+          className="
+            absolute inset-0 block translate-y-full whitespace-nowrap
+            transition-transform duration-300
+            ease-[cubic-bezier(0.21,0.47,0.32,0.98)]
+            group-hover:translate-y-0
+            group-focus-visible:translate-y-0
+            motion-reduce:transition-none
+          "
+        >
+          {otherLocale}
+        </span>
+      </span>
     </button>
   );
 }

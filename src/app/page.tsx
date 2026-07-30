@@ -1,16 +1,16 @@
-import { Hero } from "../components/sections/heroSection";
+import { HeroSection } from "../components/sections/heroSection";
 
 import { AboutSection } from "../components/sections/AboutSection";
 
-import { Products } from "../components/sections/productSection";
-import { TeamSection } from "../components/team/TeamSection";
+import { ProductSection } from "../components/sections/productSection";
+import { TeamSection } from "../components/sections/TeamSection";
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      <HeroSection />
       <AboutSection />
-      <Products/>
+      <ProductSection />
       <TeamSection />
     </>
   );
