@@ -6,11 +6,15 @@ interface TeamCardProps {
   member: TeamMember;
   /** Translated label for `member.positionKey`. */
   position: string;
+  /** Translated `team.names.<member.id>.firstName`. */
+  firstName: string;
+  /** Translated `team.names.<member.id>.lastName`, if the member has one. */
+  lastName?: string;
 }
 
-export function TeamCard({ member, position }: TeamCardProps) {
-  const { firstName, lastName, surname, image, initials } = member;
-  const fullLastName = [lastName, surname].filter(Boolean).join(" ");
+export function TeamCard({ member, position, firstName, lastName }: TeamCardProps) {
+  const { image, initials } = member;
+  const fullLastName = lastName ?? "";
 
   return (
     <div className="group relative h-full">

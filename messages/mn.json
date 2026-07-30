@@ -61,14 +61,30 @@
     "eyebrow": "Манай баг",
     "positions": {
       "ceo": "Гүйцэтгэх захирал",
-      "fullstackDeveloper": "Ахлах систем хөгжүүлэгч",
+      "HeadofAI": "Head of AI",
+      "fullstackDeveloper": "Хөгжүүлэлтийн багийн ахлагч",
       "seniorBackendDeveloper": "Ахлах бэкенд хөгжүүлэгч",
       "seniorFrontendDeveloper": "Ахлах фронтенд хөгжүүлэгч",
       "projectManager": "Төслийн менежер",
       "frontendDeveloper": "Фронтенд хөгжүүлэгч",
-      "dataAnalyst": "Дата аналист",
-      "researchSpecialist": "Судалгаа мэргэжилтэн",
-      "systemAnalyst": "Систем аналист"
+      "dataAnalyst": "Ахлах дата аналист",
+      "researchSpecialist": "Ахлах судалгааны менежер",
+      "systemAnalyst": "Систем аналист",
+      "DataScientist": "Дата шинжээч"
+    },
+    "names": {
+      "anujin": { "firstName": "Анужин", "lastName": "Түмэнбаатар" },
+      "tuguldur": { "firstName": "Төгөлдөр" },
+      "munkhtsogt": { "firstName": "Мөнхцогт", "lastName": "Цогбадрах" },
+      "saruul": { "firstName": "Саруул", "lastName": "Ганболд" },
+      "mirgalim": { "firstName": "Миргалим", "lastName": "Аспирант" },
+      "ochbadrakh": { "firstName": "Очбадрах", "lastName": "Оюунбадрах" },
+      "usukhbayar": { "firstName": "Өсөхбаяр", "lastName": "Батбаяр" },
+      "odmaa": { "firstName": "Одмаа", "lastName": "Болдбаяр" },
+      "khongorzul": { "firstName": "Хонгорзул", "lastName": "Баатар" },
+      "gerel": { "firstName": "Гэрэл", "lastName": "Соронзонболд" },
+      "nymbayar": { "firstName": "Нямбаяр", "lastName": "Батбаяр" },
+      "tumendelgerjav": { "firstName": "Түмэндэлгэржав", "lastName": "Батсүх" }
     }
   },
   "footer": {

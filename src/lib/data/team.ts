@@ -8,12 +8,27 @@ export type PositionKey =
   | "frontendDeveloper"
   | "dataAnalyst"
   | "systemAnalyst"
-  | "researchSpecialist";
+  | "researchSpecialist"
+  | "HeadofAI"
+  | "DataScientist";
+
+/** Member key under the `team.names` namespace in messages/*.json */
+export type TeamMemberId =
+  | "anujin"
+  | "tuguldur"
+  | "munkhtsogt"
+  | "saruul"
+  | "mirgalim"
+  | "ochbadrakh"
+  | "usukhbayar"
+  | "odmaa"
+  | "khongorzul"
+  | "gerel"
+  | "nymbayar"
+  | "tumendelgerjav";
 
 export interface TeamMember {
-  firstName: string;
-  lastName?: string;
-  surname?: string;
+  id: TeamMemberId;
   positionKey: PositionKey;
   image?: string;
   initials: string;
@@ -21,62 +36,62 @@ export interface TeamMember {
 
 export const team: TeamMember[] = [
   {
-    firstName: "Anujin",
-    lastName: "TumenBaatar",
+    id: "anujin",
     positionKey: "ceo",
     initials: "A",
   },
   {
-    firstName: "Munkhtsogt",
-    lastName: "Tsogbadrakh",
+    id: "tuguldur",
+    positionKey: "HeadofAI",
+    initials: "M",
+  },
+  {
+    id: "munkhtsogt",
     positionKey: "fullstackDeveloper",
     initials: "M",
   },
   {
-    firstName: "Saruul",
-    lastName: "Ganbold",
+    id: "saruul",
     positionKey: "seniorBackendDeveloper",
     initials: "S",
   },
   {
-    firstName: "Mirgalim",
-    lastName: "Aspirant",
+    id: "mirgalim",
     positionKey: "seniorFrontendDeveloper",
     initials: "M",
   },
   {
-    firstName: "Odmaa",
-    lastName: "Boldbayar",
-    positionKey: "projectManager",
-    initials: "O",
-  },
-  {
-    firstName: "Khongorzul",
-    lastName: "Baatar",
-    positionKey: "systemAnalyst",
-    initials: "H",
-  },
-  {
-    firstName: "Ochbadrakh",
-    lastName: "Oyunbadrakh",
+    id: "ochbadrakh",
     positionKey: "frontendDeveloper",
     initials: "O",
   },
   {
-    firstName: "Usukhbayar",
-    lastName: "Batbayar",
+    id: "usukhbayar",
     positionKey: "frontendDeveloper",
     initials: "U",
   },
   {
-    firstName: "Nymbayar",
-    lastName: "Batbayar",
+    id: "odmaa",
+    positionKey: "projectManager",
+    initials: "O",
+  },
+  {
+    id: "khongorzul",
+    positionKey: "systemAnalyst",
+    initials: "H",
+  },
+  {
+    id: "gerel",
+    positionKey: "DataScientist",
+    initials: "H",
+  },
+  {
+    id: "nymbayar",
     positionKey: "dataAnalyst",
     initials: "N",
   },
   {
-    firstName: "Tumendelgerjav",
-    lastName: "Batsukh",
+    id: "tumendelgerjav",
     positionKey: "researchSpecialist",
     initials: "T",
   },

@@ -25,10 +25,15 @@ export function TeamSection() {
         <StaggerGroup className="mt-16 flex flex-wrap justify-center gap-8 lg:gap-10">
           {team.map((member) => (
             <StaggerItem
-              key={member.firstName}
+              key={member.id}
               className="h-full w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.667rem)] xl:w-[calc(25%-1.875rem)]"
             >
-              <TeamCard member={member} position={t(`positions.${member.positionKey}`)} />
+              <TeamCard
+                member={member}
+                firstName={t(`names.${member.id}.firstName`)}
+                lastName={t.has(`names.${member.id}.lastName`) ? t(`names.${member.id}.lastName`) : undefined}
+                position={t(`positions.${member.positionKey}`)}
+              />
             </StaggerItem>
           ))}
         </StaggerGroup>

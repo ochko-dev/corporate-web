@@ -61,14 +61,30 @@
     "eyebrow": "Our team",
     "positions": {
       "ceo": "Chief Executive Officer (CEO)",
-      "fullstackDeveloper": "Senior system developer",
+      "HeadofAI": "Head of AI",
+      "fullstackDeveloper": " Development team lead",
       "seniorBackendDeveloper": "Senior backend developer",
       "seniorFrontendDeveloper": "senior frontend developer",
       "projectManager": "Project Manager",
       "frontendDeveloper": "Frontend developer",
-      "dataAnalyst": "Data analyst",
-      "researchSpecialist": "Research Specialist",
-      "systemAnalyst": "System Analyst"
+      "dataAnalyst": "Senior data analyst",
+      "researchSpecialist": "senior research manager",
+      "systemAnalyst": "System Analyst",
+      "DataScientist": "Data Scientist"
+    },
+    "names": {
+      "anujin": { "firstName": "Anujin", "lastName": "TumenBaatar" },
+      "tuguldur": { "firstName": "Tuguldur" },
+      "munkhtsogt": { "firstName": "Munkhtsogt", "lastName": "Tsogbadrakh" },
+      "saruul": { "firstName": "Saruul", "lastName": "Ganbold" },
+      "mirgalim": { "firstName": "Mirgalim", "lastName": "Aspirant" },
+      "ochbadrakh": { "firstName": "Ochbadrakh", "lastName": "Oyunbadrakh" },
+      "usukhbayar": { "firstName": "Usukhbayar", "lastName": "Batbayar" },
+      "odmaa": { "firstName": "Odmaa", "lastName": "Boldbayar" },
+      "khongorzul": { "firstName": "Khongorzul", "lastName": "Baatar" },
+      "gerel": { "firstName": "Gerel", "lastName": "Soronzonbold" },
+      "nymbayar": { "firstName": "Nymbayar", "lastName": "Batbayar" },
+      "tumendelgerjav": { "firstName": "Tumendelgerjav", "lastName": "Batsukh" }
     }
   },
   "footer": {
