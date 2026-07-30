@@ -32,20 +32,21 @@ export default function CursorFirework() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
-  const [enabled, setEnabled] = useState(true);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-      const isTouchDevice =
-    window.matchMedia("(hover: none)").matches;
+   const isTouchDevice =
+    window.matchMedia("(hover: none)").matches ||
+    window.matchMedia("(pointer: coarse)").matches;
 
   if (isTouchDevice) {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setEnabled(false);
     return;
   }
 
   setEnabled(true);
-    const canvas = canvasRef.current;
+
+  const canvas = canvasRef.current;
     const dot = dotRef.current;
     const ring = ringRef.current;
 
@@ -398,6 +399,9 @@ export default function CursorFirework() {
 
 
     return () => {
+
+setEnabled(false);
+
       cancelAnimationFrame(rafId);
 
       window.clearTimeout(
@@ -441,6 +445,8 @@ if (!enabled) return null;
   return (
     <>
       <style>{`
+
+      
         .has-custom-cursor,
         .has-custom-cursor body,
         .has-custom-cursor a,
@@ -483,13 +489,13 @@ if (!enabled) return null;
           border-color:transparent;
         }
 
-        @media (hover:none){
-          .cursor-dot,
-          .cursor-ring,
-          .cursor-fx {
-            display:none;
-          }
-        }
+       @media (hover:none), (pointer:coarse) {
+  .cursor-dot,
+  .cursor-ring,
+  .cursor-fx {
+    display:none !important;
+  }
+}
       `}</style>
 
       <canvas
