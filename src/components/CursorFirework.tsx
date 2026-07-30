@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect,useState, useRef } from "react";
 
 const MAX_PARTICLES = 220;
 const SPRITE_SIZE = 32;
@@ -32,8 +32,19 @@ export default function CursorFirework() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
+  const [enabled, setEnabled] = useState(true);
 
   useEffect(() => {
+      const isTouchDevice =
+    window.matchMedia("(hover: none)").matches;
+
+  if (isTouchDevice) {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setEnabled(false);
+    return;
+  }
+
+  setEnabled(true);
     const canvas = canvasRef.current;
     const dot = dotRef.current;
     const ring = ringRef.current;
@@ -425,7 +436,7 @@ export default function CursorFirework() {
     };
 
   }, []);
-
+if (!enabled) return null;
 
   return (
     <>

@@ -75,6 +75,16 @@ export const team: TeamMember[] = [
     positionKey: "projectManager",
     initials: "O",
   },
+    {
+    id: "nymbayar",
+    positionKey: "dataAnalyst",
+    initials: "N",
+  },
+  {
+    id: "tumendelgerjav",
+    positionKey: "researchSpecialist",
+    initials: "T",
+  },
   {
     id: "khongorzul",
     positionKey: "systemAnalyst",
@@ -85,14 +95,5 @@ export const team: TeamMember[] = [
     positionKey: "DataScientist",
     initials: "H",
   },
-  {
-    id: "nymbayar",
-    positionKey: "dataAnalyst",
-    initials: "N",
-  },
-  {
-    id: "tumendelgerjav",
-    positionKey: "researchSpecialist",
-    initials: "T",
-  },
+
 ];
