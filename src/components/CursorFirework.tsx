@@ -680,28 +680,23 @@ export default function CursorFirework() {
       }
 
 
-      .cursor-dot {
-        position:fixed;
-        width:6px;
-        height:6px;
-        background:white;
-        border-radius:50%;
-        pointer-events:none;
-        z-index:9999;
-      }
+   .cursor-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: var(--cursor-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+}
 
+:root {
+  --cursor-color: black;
+}
 
-      .cursor-ring {
-        position:fixed;
-        width:18px;
-        height:18px;
-        border:1.5px solid rgba(255,255,255,.7);
-        border-radius:50%;
-        pointer-events:none;
-        z-index:9998;
-        mix-blend-mode:difference;
-      }
-
+.dark {
+  --cursor-color: white;
+}
 
       @media (hover:none),
       (pointer:coarse){
