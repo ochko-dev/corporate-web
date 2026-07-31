@@ -87,7 +87,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headerLocale = (await headers()).get("x-locale");
+  const headerLocale = (await headers()).get("x-locale") ?? undefined;
   const cookieLocale = (await cookies()).get(LOCALE_COOKIE)?.value;
   const locale = isLocale(headerLocale)
     ? headerLocale
