@@ -38,25 +38,26 @@ export const team: TeamMember[] = [
   {
     id: "anujin",
     positionKey: "ceo",
-    image: "https://i.pravatar.cc/400?img=47",
+    image:"/emegtei1.png",
+    
     initials: "A",
   },
   {
     id: "tuguldur",
     positionKey: "HeadofAI",
-    image: "https://i.pravatar.cc/400?img=3",
+   image: "/teamzurag.png",
     initials: "M",
   },
   {
     id: "munkhtsogt",
     positionKey: "fullstackDeveloper",
-    image: "https://i.pravatar.cc/400?img=8",
+    image: "/eregtei1.png",
     initials: "M",
   },
   {
     id: "saruul",
     positionKey: "seniorBackendDeveloper",
-    image: "https://i.pravatar.cc/400?img=12",
+    image: "/eregtei2.png",
     initials: "S",
   },
   {
@@ -82,7 +83,7 @@ export const team: TeamMember[] = [
   {
     id: "odmaa",
     positionKey: "projectManager",
-    image: "https://i.pravatar.cc/400?img=32",
+    image: "/emegtei_team_portrait_1024.png",
     initials: "O",
   },
     {
