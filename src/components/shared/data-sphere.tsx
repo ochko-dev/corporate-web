@@ -55,6 +55,11 @@ type Satellite = {
 };
 
 const NODE_COUNT = 2200;
+/** Tablet/mobile (<1024px): the assembly phase's per-node flight math, the
+ *  ephemeral chaos-link mesh, and the oversized canvas all cost CPU/GPU time
+ *  proportional to particle count — halving it keeps the intro smooth on
+ *  weaker mobile hardware without changing how the desktop sphere looks. */
+const NODE_COUNT_COMPACT = 1100;
 const CLUSTER_COUNT = 14;
 const PACKET_COUNT = 140;
 const SATELLITE_COUNT = 84;
@@ -128,7 +133,7 @@ function colorAt(t: number): [number, number, number] {
   return [r1 + (r2 - r1) * localT, g1 + (g2 - g1) * localT, b1 + (b2 - b1) * localT];
 }
 
-function buildSphere(seed: number) {
+function buildSphere(seed: number, nodeCount: number) {
   const rand = mulberry32(seed);
 
   const clusters = Array.from({ length: CLUSTER_COUNT }, (_, i) => {
@@ -154,7 +159,7 @@ function buildSphere(seed: number) {
   const clusterHub: (number | null)[] = clusters.map(() => null);
   const clusterHubDensity: number[] = clusters.map(() => -Infinity);
 
-  for (let i = 0; i < NODE_COUNT; i++) {
+  for (let i = 0; i < nodeCount; i++) {
     let dir: Vec3;
     let density: number;
     let clusterIndex = -1;
@@ -440,13 +445,20 @@ export function DataSphere({ className = "" }: { className?: string }) {
     const context = ctx2d;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const { nodes, edges, packets, satellites } = buildSphere(11);
+    // Below the `lg` breakpoint (tablet/mobile): fewer particles, a lower
+    // pixel budget, and the chaos-link mesh skipped entirely (see below) —
+    // the assembly phase was janky on weaker mobile GPUs/CPUs otherwise.
+    const isCompact = window.matchMedia("(max-width: 1023px)").matches;
+    const { nodes, edges, packets, satellites } = buildSphere(
+      11,
+      isCompact ? NODE_COUNT_COMPACT : NODE_COUNT,
+    );
 
     let width = 0;
     let height = 0;
     // The canvas is OVERSCAN× the host box, so cap DPR a little lower to
-    // keep the pixel budget sane.
-    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    // keep the pixel budget sane (and lower still on compact viewports).
+    const dpr = Math.min(window.devicePixelRatio || 1, isCompact ? 1 : 1.5);
 
     function resize() {
       if (!container || !canvas) return;
@@ -710,7 +722,7 @@ export function DataSphere({ className = "" }: { className?: string }) {
       // Short-lived links flicker between nearby loose particles — hints of
       // structure appearing and dissolving in the chaos, cross-fading into
       // the real mesh as the sphere organizes.
-      if (chaosLinkAlpha > 0.01) {
+      if (!isCompact && chaosLinkAlpha > 0.01) {
         const cell = Math.max(48, width * 0.045);
         const linkR = cell * 0.92;
         const linkR2 = linkR * linkR;
