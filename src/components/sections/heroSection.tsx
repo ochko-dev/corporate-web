@@ -112,7 +112,7 @@ export function HeroSection() {
       <div className="absolute inset-0 -z-10 bg-noise opacity-[0.03] mix-blend-overlay" />
 
      <div className="section-container relative z-10 flex h-full flex-col gap-10 pt-28 lg:grid lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-10 lg:pt-0">
-        <div className="flex flex-col items-start text-left">
+        <div className="order-2 flex flex-col items-start text-left lg:order-1">
           <h1
             ref={headlineRef}
             className="max-w-xl text-4xl leading-[1.1] font-semibold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl"
@@ -127,7 +127,7 @@ export function HeroSection() {
 
         <div
           ref={sphereSlotRef}
-          className="aspect-square w-full max-w-104 self-center lg:h-full lg:w-full lg:max-w-none lg:self-auto"
+          className="order-1 aspect-square w-full max-w-104 self-center lg:order-2 lg:h-full lg:w-full lg:max-w-none lg:self-auto"
           aria-hidden
         />
       </div>

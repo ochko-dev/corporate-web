@@ -5,8 +5,8 @@ import { Download } from "lucide-react";
 import { cn } from "@/src/lib/utils";
 
 const files: Record<string, string> = {
-  mn: "/pdfFiles/Odin-Tech-Taniltsuulga.pdf",
-  en: "/pdfFiles/Odin-Tech-Taniltsuulga-ENGLISH.pdf",
+  mn: "/pdfFiles/OdinTech_Taniltsuulga_MONGOLIA.pdf",
+  en: "/pdfFiles/OdinTech_Taniltsuulga_ENGLISH.pdf",
 };
 
 interface DownloadPdfButtonProps {

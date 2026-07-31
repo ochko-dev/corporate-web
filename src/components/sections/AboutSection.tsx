@@ -41,7 +41,7 @@ export function AboutSection() {
       <div className="pointer-events-none absolute inset-0 bg-grid mask-fade-b opacity-[0.08]" />
       <div className="pointer-events-none absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay" />
 
-      <div className="section-container relative z-10 flex min-h-full flex-col items-end gap-4 py-24 sm:gap-10 sm:py-32">
+      <div className="section-container relative z-10 flex min-h-full flex-col items-end gap-4 pt-2 pb-24 sm:gap-10 sm:py-32">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

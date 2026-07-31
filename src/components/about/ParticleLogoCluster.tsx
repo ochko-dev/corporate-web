@@ -64,7 +64,7 @@ export function ParticleLogoCluster({ className }: ParticleLogoClusterProps) {
       }}
       overscan={1.4}
       className={cn(
-        "pointer-events-none absolute top-24 left-1/2 z-0 h-90 w-90 -translate-x-1/2 origin-top-left sm:top-16 sm:left-40 sm:h-115 sm:w-115 sm:translate-x-0",
+        "pointer-events-none relative z-0 mx-auto h-72 w-72 sm:absolute sm:top-16 sm:left-40 sm:mx-0 sm:h-115 sm:w-115 sm:origin-top-left",
         className,
       )}
     />

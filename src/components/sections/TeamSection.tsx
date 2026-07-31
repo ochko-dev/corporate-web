@@ -6,8 +6,8 @@ import { team } from "@/src/lib/data/team";
 
 /** Billing tiers: how many names share each type size, largest first. */
 const TIERS = [
-  { take: 1, name: "text-4xl sm:text-6xl lg:text-7xl", role: "text-[11px]" },
-  { take: 2, name: "text-3xl sm:text-5xl lg:text-6xl", role: "text-[10px]" },
+  { take: 1, name: "text-xl sm:text-3xl lg:text-4xl", role: "text-[10px]" },
+  { take: 2, name: "text-xl sm:text-3xl lg:text-4xl", role: "text-[10px]" },
   { take: Infinity, name: "text-xl sm:text-3xl lg:text-4xl", role: "text-[10px]" },
 ];
 
