@@ -67,14 +67,14 @@ export function TeamSection() {
                         {t(`names.${member.id}.firstName`)}
                       </motion.span>
 
-                      {t.has(`names.${member.id}.lastName`) ? (
-                        <motion.span
-                          {...WORD_IN}
-                          className="mt-1 block font-normal text-muted-foreground transition-colors duration-300 ease-out group-hover:text-primary/60"
-                        >
-                          {t(`names.${member.id}.lastName`)}
-                        </motion.span>
-                      ) : null}
+                    {t.has(`names.${member.id}.lastName`) ? (
+  <motion.span
+    {...WORD_IN}
+    className="mt-1 block text-[0.6em] leading-[1] font-normal tracking-[0.02em] text-muted-foreground transition-colors duration-300 ease-out group-hover:text-primary/60"
+  >
+    {t(`names.${member.id}.lastName`)}
+  </motion.span>
+) : null}
                     </p>
 
                     <motion.p
