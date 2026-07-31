@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { ThemeProvider } from "../components/layout/theme-provider";
 import { LocaleProvider } from "../components/providers/locale-provider";
@@ -87,9 +87,13 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const cookieStore = await cookies();
-  const cookieLocale = cookieStore.get(LOCALE_COOKIE)?.value;
-  const locale = isLocale(cookieLocale) ? cookieLocale : defaultLocale;
+  const headerLocale = (await headers()).get("x-locale");
+  const cookieLocale = (await cookies()).get(LOCALE_COOKIE)?.value;
+  const locale = isLocale(headerLocale)
+    ? headerLocale
+    : isLocale(cookieLocale)
+      ? cookieLocale
+      : defaultLocale;
 
   return (
     <html
