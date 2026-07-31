@@ -50,9 +50,13 @@ export function ProductSection() {
         {/* Header */}
         <Reveal>
           <div className="flex flex-col items-center gap-3 text-center">
-            <span className="text-xs font-semibold tracking-[0.4em] text-primary uppercase">
-              {t("eyebrow")}
-            </span>
+            <div className="flex items-center justify-center gap-4 sm:gap-6">
+  <span className="h-px w-14 bg-linear-to-r from-transparent to-border sm:w-24" aria-hidden />
+  <span className="text-xs font-semibold tracking-[0.4em] text-primary uppercase">
+    {t("eyebrow")}
+  </span>
+  <span className="h-px w-14 bg-linear-to-l from-transparent to-border sm:w-24" aria-hidden />
+</div>
             <h2 className="max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
               {t("headline")}
               <br />

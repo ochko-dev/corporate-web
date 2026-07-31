@@ -49,9 +49,14 @@ export function AboutSection() {
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="flex w-full flex-col items-end gap-4 sm:gap-10"
         >
-          <div className="w-full text-center text-xs font-semibold tracking-[0.4em] text-primary uppercase">
-            {ABOUT_LABEL}
-          </div>
+     <div className="flex w-full items-center justify-center gap-4 text-xs font-semibold tracking-[0.4em] text-primary uppercase">
+  <span className="h-px w-14 bg-linear-to-r from-transparent to-border sm:w-24" aria-hidden />
+  <span className="-me-[0.4em]">{ABOUT_LABEL}</span>
+  <span className="h-px w-14 bg-linear-to-l from-transparent to-border sm:w-24" aria-hidden />
+</div>
+          {/* <div className="w-full text-center text-xs font-semibold tracking-[0.4em] text-primary uppercase">
+            
+          </div> */}
           <AboutIntroduction paragraphs={INTRO_PARAGRAPHS} />
         </motion.div>
        <div className="w-full pb-8 sm:pb-0">

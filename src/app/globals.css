@@ -248,4 +248,12 @@
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
+  @keyframes team-orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes team-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
 }
